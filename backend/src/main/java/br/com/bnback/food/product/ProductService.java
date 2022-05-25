@@ -1,13 +1,15 @@
 package br.com.bnback.food.product;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductService {
-
+public class ProductService implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	@Autowired
 	public ProductRepository productRepository;
 
@@ -20,7 +22,7 @@ public class ProductService {
 	}
 
 	public Product findById(Long id) {
-		return productRepository.findById(id).orElseThrow(() -> new RuntimeException("id not found " + id));
+		return productRepository.findById(id).orElseThrow(() -> new RuntimeException("not found " + id));
 	}
 
 	public void deleteById(Long id) {

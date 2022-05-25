@@ -1,0 +1,5 @@
+package br.com.bnback.food.order;
+
+public class Order {
+
+}

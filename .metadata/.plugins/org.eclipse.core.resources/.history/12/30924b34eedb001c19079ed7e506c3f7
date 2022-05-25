@@ -1,0 +1,11 @@
+package br.com.bnback.food.order;
+
+public enum OrderStatus {
+
+	WAITING_PAYMENT, 
+	PAID,
+	SHIPPED,
+	DELIVERD,
+	CANCELED;
+
+}
